@@ -19,6 +19,9 @@ const authRoute = require("./routes/auth.route");
 const taskRoute = require("./routes/task.route");
 const undefinedRoute = require("./middlewares/undefinedRoutes");
 
+app.get("/", (req, res) => {
+  res.send("API is working");
+});
 app.use("/api/v1/auth", authRoute);
 app.use("/api/v1/task", taskRoute);
 
@@ -30,5 +33,3 @@ app.listen(port, async () => {
   await mongodbConnect();
   console.log(`server running on ${port}`);
 });
-
-
