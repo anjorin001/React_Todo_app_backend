@@ -17,6 +17,7 @@ const port = process.env.PORT;
 
 const authRoute = require("./routes/auth.route");
 const taskRoute = require("./routes/task.route");
+const userRoute = require("./routes/user.route");
 const undefinedRoute = require("./middlewares/undefinedRoutes");
 
 app.get("/", (req, res) => {
@@ -24,6 +25,7 @@ app.get("/", (req, res) => {
 });
 app.use("/api/v1/auth", authRoute);
 app.use("/api/v1/task", taskRoute);
+app.use("/api/v1", userRoute);
 
 app.use(undefinedRoute);
 
